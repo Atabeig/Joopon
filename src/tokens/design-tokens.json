@@ -1,0 +1,182 @@
+{
+  "colors": {},
+  "typography": {},
+  "spacing": {},
+  "components": {
+    "Main Logo": {
+      "type": "COMPONENT",
+      "id": "59:40",
+      "description": "",
+      "size": {
+        "x": 1253,
+        "y": 21,
+        "width": 99,
+        "height": 121
+      }
+    },
+    "Digikala": {
+      "type": "COMPONENT",
+      "id": "59:31",
+      "description": "",
+      "size": {
+        "x": 928,
+        "y": 413,
+        "width": 381,
+        "height": 305
+      }
+    },
+    "Iranketab": {
+      "type": "COMPONENT",
+      "id": "59:29",
+      "description": "",
+      "size": {
+        "x": 519,
+        "y": 413,
+        "width": 380,
+        "height": 305
+      }
+    },
+    "Khanumi": {
+      "type": "COMPONENT",
+      "id": "59:28",
+      "description": "",
+      "size": {
+        "x": 109,
+        "y": 413,
+        "width": 380,
+        "height": 305
+      }
+    },
+    "Giftac": {
+      "type": "COMPONENT",
+      "id": "59:38",
+      "description": "",
+      "size": {
+        "x": 929,
+        "y": 902,
+        "width": 380,
+        "height": 305
+      }
+    },
+    "TAPSISHOP": {
+      "type": "COMPONENT",
+      "id": "59:36",
+      "description": "",
+      "size": {
+        "x": 519,
+        "y": 902,
+        "width": 380,
+        "height": 305
+      }
+    },
+    "MYDMC": {
+      "type": "COMPONENT",
+      "id": "59:34",
+      "description": "",
+      "size": {
+        "x": 109,
+        "y": 902,
+        "width": 380,
+        "height": 327
+      }
+    }
+  },
+  "frames": {
+    "Landingpage": {
+      "type": "FRAME",
+      "id": "1:2",
+      "size": {
+        "x": -66,
+        "y": 0,
+        "width": 1440,
+        "height": 1659
+      },
+      "backgroundColor": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    },
+    "Landing": {
+      "type": "FRAME",
+      "id": "14:94",
+      "size": {
+        "x": 1542,
+        "y": 0,
+        "width": 1440,
+        "height": 1024
+      },
+      "backgroundColor": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    },
+    "Auth_Login": {
+      "type": "FRAME",
+      "id": "53:23",
+      "size": {
+        "x": -3079,
+        "y": 0,
+        "width": 1440,
+        "height": 1024
+      },
+      "backgroundColor": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    },
+    "Auth_Create": {
+      "type": "FRAME",
+      "id": "46:114",
+      "size": {
+        "x": -3079,
+        "y": 1154,
+        "width": 1440,
+        "height": 1024
+      },
+      "backgroundColor": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    },
+    "Auth_Create-error": {
+      "type": "FRAME",
+      "id": "46:65",
+      "size": {
+        "x": -4616,
+        "y": 0,
+        "width": 1440,
+        "height": 1024
+      },
+      "backgroundColor": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    },
+    "Colors": {
+      "type": "FRAME",
+      "id": "46:90",
+      "size": {
+        "x": -1542,
+        "y": -1995,
+        "width": 1440,
+        "height": 1024
+      },
+      "backgroundColor": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      }
+    }
+  }
+}

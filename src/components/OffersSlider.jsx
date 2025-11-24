@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeft } from 'lucide-react';
 import OfferCard from './OfferCard';
 import { getDiscounts } from '../services/api';
+import flashIcon from '../assets/images/figma/flash.svg';
 
 const CARD_WIDTH = 320;
 const CARD_GAP = 12;
@@ -9,7 +9,9 @@ const INITIAL_OFFSET = 0;
 
 const OffersSlider = () => {
   const [items, setItems] = useState([]);
+  const [isHovered, setIsHovered] = useState(false);
   const listRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     getDiscounts().then((data) => {
@@ -40,14 +42,22 @@ const OffersSlider = () => {
           موارد بیشتر &lt;
         </button>
       </div>
-      <div className="relative overflow-hidden" style={{ width: '1200px', margin: '0 auto' }}>
+      <div 
+        ref={containerRef}
+        className="relative overflow-hidden" 
+        style={{ width: '1200px', margin: '0 auto' }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <button
           type="button"
           onClick={() => handleScroll(1)}
-          className="absolute left-6 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full bg-[#FF6C08] p-3 text-white shadow-md"
+          className={`absolute left-6 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full bg-[#FF6C08] p-3 text-white shadow-md transition-opacity duration-300 ${
+            isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
           aria-label="مشاهده کارت‌های بعدی"
         >
-          <ChevronLeft size={16} />
+          <img src={flashIcon} alt="scroll" className="w-4 h-4" />
         </button>
         <div
           ref={listRef}

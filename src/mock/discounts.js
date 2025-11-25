@@ -38,7 +38,7 @@ export const discounts = [
     image: digikalaPoster,
     discountText: '۱۰ درصد تخفیف کالاهای دیجیتال',
     storeName: 'دیجی‌کالا',
-    categories: ['تکنولوژی', 'دیجیتال'],
+   categories : ['تکنولوژی', 'دیجیتال'],
     logo: digikalaLogo,
   }
 ];

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import OffersSlider from '../components/OffersSlider';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
           <OffersSlider />
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

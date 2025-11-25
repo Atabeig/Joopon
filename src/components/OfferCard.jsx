@@ -11,11 +11,11 @@ const OfferCard = ({ image, discountText, storeName, categories = [], logo }) =>
           </div>
         )}
       </div>
-      <div className="flex flex-col gap-2 pt-6">
-        <strong className="text-base font-bold text-[#3A3A3A]">{discountText}</strong>
+      <div className="flex flex-col gap-2 pt-2">
+        <strong className="text-base font-extrabold text-[#3A3A3A]">{discountText}</strong>
         <span className="text-sm font-medium text-[#4A4A4A]">{storeName}</span>
         <span className="text-xs font-medium text-[#9A9A9A]">
-          {categories.filter(Boolean).join(' • ')}
+          مخصوص دانشجویان • {categories.length > 0 ? categories[0] : ''}
         </span>
       </div>
     </article>

@@ -2,13 +2,21 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import OfferCard from './OfferCard';
-import { getDiscounts } from '../services/api';
+import digikalaPoster from '../assets/images/stores/Digikala_Poster.jpg';
+import sdfPoster from '../assets/images/stores/SDF_Poster.jpg';
+import shilaPoster from '../assets/images/stores/Shila_Poster.jpg';
+import khanumiPoster from '../assets/images/stores/Khanumi_Poster.jpg';
+import tiwallPoster from '../assets/images/stores/Tiwall_Poster.jpg';
+import digikalaLogo from '../assets/images/Logos/digikala_logo.svg';
+import shilaLogo from '../assets/images/Logos/shila_logo.svg';
+import khanumiLogo from '../assets/images/Logos/khanumi_logo.svg';
+import tiwallLogo from '../assets/images/Logos/tiwall_logo.svg';
+import sdpLogo from '../assets/images/Logos/SDF_logo.svg';
 
 const CARD_WIDTH = 320;
 const CARD_GAP = 4;
-const INITIAL_OFFSET = 0;
 
-const OffersSlider = () => {
+const NewOffersSlider = () => {
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [isHovered, setIsHovered] = useState(false);
@@ -16,17 +24,55 @@ const OffersSlider = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    getDiscounts().then((data) => {
-      // فقط فروشگاه‌های محبوب (قدیمی‌ها)
-      const popularStores = ['دیجی‌کالا', 'شیلا', 'خانومی', 'ایران‌کتاب'];
-      const uniqueStores = new Map();
-      data.forEach(item => {
-        if (popularStores.includes(item.storeName) && !uniqueStores.has(item.storeName)) {
-          uniqueStores.set(item.storeName, item);
-        }
-      });
-      setItems(Array.from(uniqueStores.values()));
-    });
+    // تخفیف‌های جدید
+    const newOffers = [
+      {
+        id: 'new-1',
+        image: digikalaPoster,
+        discountText: 'تا ۳۰ درصد تخفیف',
+        storeName: 'دیجی‌کالا',
+        type: 'percentage',
+        categories: ['تکنولوژی و دیجیتال'],
+        logo: digikalaLogo,
+      },
+      {
+        id: 'new-2',
+        image: shilaPoster,
+        discountText: 'تا ۲۵ درصد تخفیف',
+        storeName: 'شیلا',
+        type: 'percentage',
+        categories: ['غذا و نوشیدنی'],
+        logo: shilaLogo,
+      },
+      {
+        id: 'new-3',
+        image: khanumiPoster,
+        discountText: '۱۵ درصد تخفیف خرید اول',
+        storeName: 'خانومی',
+        type: 'first_purchase',
+        categories: ['زیبایی و سلامت'],
+        logo: khanumiLogo,
+      },
+      {
+        id: 'new-4',
+        image: tiwallPoster,
+        discountText: 'تا ۴۰ درصد تخفیف بلیط تئاتر',
+        storeName: 'تیوال',
+        type: 'percentage',
+        categories: ['سرگرمی'],
+        logo: tiwallLogo,
+      },
+      {
+        id: 'new-5',
+        image: sdfPoster,
+        discountText: '۲۰ درصد تخفیف خرید اول',
+        storeName: 'اس‌دی‌پی',
+        type: 'first_purchase',
+        categories: ['تکنولوژی و دیجیتال'],
+        logo: sdpLogo,
+      },
+    ];
+    setItems(newOffers);
   }, []);
 
   useEffect(() => {
@@ -47,10 +93,10 @@ const OffersSlider = () => {
   return (
     <section className="flex flex-col gap-6" style={{ fontFamily: 'IRANYekan' }}>
       <div className="flex items-center justify-between">
-        <h2 className="text-xl md:text-2xl font-bold text-[#3A3A3A]">محبوب‌ترین تخفیف‌ها</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-[#3A3A3A]">تخفیف‌های جدید</h2>
         <button
           type="button"
-          onClick={() => navigate('/popular-discounts')}
+          onClick={() => navigate('/new-discounts')}
           className="flex items-center gap-1 text-xs md:text-sm font-semibold text-[#FF6C08]"
         >
           <span>موارد بیشتر</span>
@@ -109,4 +155,4 @@ const OffersSlider = () => {
   );
 };
 
-export default OffersSlider;
+export default NewOffersSlider;

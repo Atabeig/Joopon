@@ -1,15 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import jooponLogo from '../assets/images/Logos/Joopon.svg';
 
 const MainLogo = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex items-center">
+    <button 
+      onClick={() => navigate('/')}
+      className="flex items-center cursor-pointer"
+    >
       <img 
         src={jooponLogo} 
         alt="جوپن" 
-        className="h-16 w-auto"
+        className="h-20 md:h-20 w-auto"
       />
-    </div>
+    </button>
   );
 };
 

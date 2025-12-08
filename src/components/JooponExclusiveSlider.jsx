@@ -2,13 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import OfferCard from './OfferCard';
-import { getDiscounts } from '../services/api';
+import giftaccPoster from '../assets/images/stores/Giftacc_Poster.jpg';
+import janebiPoster from '../assets/images/stores/Janebi_Poster.jpg';
+import tapsiPoster from '../assets/images/stores/Tapsi_Poster.jpg';
+import giftaccLogo from '../assets/images/Logos/giftac_logo.svg';
+import janebiLogo from '../assets/images/Logos/janebi_logo.svg';
+import tapsiLogo from '../assets/images/Logos/tapsishop_logo.svg';
 
 const CARD_WIDTH = 320;
 const CARD_GAP = 4;
-const INITIAL_OFFSET = 0;
 
-const OffersSlider = () => {
+const JooponExclusiveSlider = () => {
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [isHovered, setIsHovered] = useState(false);
@@ -16,17 +20,37 @@ const OffersSlider = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    getDiscounts().then((data) => {
-      // فقط فروشگاه‌های محبوب (قدیمی‌ها)
-      const popularStores = ['دیجی‌کالا', 'شیلا', 'خانومی', 'ایران‌کتاب'];
-      const uniqueStores = new Map();
-      data.forEach(item => {
-        if (popularStores.includes(item.storeName) && !uniqueStores.has(item.storeName)) {
-          uniqueStores.set(item.storeName, item);
-        }
-      });
-      setItems(Array.from(uniqueStores.values()));
-    });
+    // مخصوص جوپن
+    const exclusiveOffers = [
+      {
+        id: 'exclusive-1',
+        image: giftaccPoster,
+        discountText: 'تا ۳۵ درصد تخفیف',
+        storeName: 'گیفتک',
+        type: 'percentage',
+        categories: ['سرگرمی'],
+        logo: giftaccLogo,
+      },
+      {
+        id: 'exclusive-2',
+        image: janebiPoster,
+        discountText: '۲۵ درصد تخفیف خرید اول',
+        storeName: 'جانبی',
+        type: 'first_purchase',
+        categories: ['تکنولوژی و دیجیتال'],
+        logo: janebiLogo,
+      },
+      {
+        id: 'exclusive-3',
+        image: tapsiPoster,
+        discountText: 'تا ۳۰ درصد تخفیف',
+        storeName: 'تپسی‌شاپ',
+        type: 'percentage',
+        categories: ['تکنولوژی و دیجیتال'],
+        logo: tapsiLogo,
+      },
+    ];
+    setItems(exclusiveOffers);
   }, []);
 
   useEffect(() => {
@@ -47,10 +71,10 @@ const OffersSlider = () => {
   return (
     <section className="flex flex-col gap-6" style={{ fontFamily: 'IRANYekan' }}>
       <div className="flex items-center justify-between">
-        <h2 className="text-xl md:text-2xl font-bold text-[#3A3A3A]">محبوب‌ترین تخفیف‌ها</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-[#3A3A3A]">مخصوص جوپن</h2>
         <button
           type="button"
-          onClick={() => navigate('/popular-discounts')}
+          onClick={() => navigate('/joopon-exclusive')}
           className="flex items-center gap-1 text-xs md:text-sm font-semibold text-[#FF6C08]"
         >
           <span>موارد بیشتر</span>
@@ -109,4 +133,4 @@ const OffersSlider = () => {
   );
 };
 
-export default OffersSlider;
+export default JooponExclusiveSlider;

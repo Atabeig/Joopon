@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 177.218 209.268">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.098 73.627">
   <defs>
     <style>
-      .cls-1 {
+      .cls-1, .cls-2 {
         fill: #ff641f;
       }
 
-      .cls-1, .cls-2 {
+      .cls-1, .cls-3 {
         stroke-width: 0px;
       }
 
       .cls-2 {
+        font-family: Kalameh-Regular, Kalameh;
+        font-size: 18px;
+      }
+
+      .cls-3 {
         fill: url(#linear-gradient);
       }
     </style>
-    <linearGradient id="linear-gradient" x1="133.792" y1="37.17" x2="101.088" y2="240.55" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="33.666" y1="9.145" x2="25.619" y2="59.185" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ff551a"/>
       <stop offset=".345" stop-color="#ff5718"/>
       <stop offset=".567" stop-color="#ff6015"/>
@@ -23,6 +28,9 @@
       <stop offset="1" stop-color="#ff9100"/>
     </linearGradient>
   </defs>
-  <circle class="cls-1" cx="38.049" cy="156.48" r="38.049"/>
-  <path class="cls-2" d="M177.218,5.692v78.015c0,10.128-1.169,19.922-3.423,29.297-.334,1.423-.668,2.762-1.085,4.185-14.529,52.568-62.289,91.324-119.15,92.078,24.715-22.936,40.162-55.749,40.162-92.078v-58.595c0-9.041,2.004-17.495,5.678-25.112C107.833,15.569,125.117,2.679,145.573.418c2.17-.335,4.341-.418,6.596-.418,9.018,0,17.451,2.009,25.049,5.692Z"/>
+  <text class="cls-2" transform="translate(0 66.885)"><tspan x="0" y="0">Joopon</tspan></text>
+  <g>
+    <circle class="cls-1" cx="10.109" cy="38.5" r="9.361"/>
+    <path class="cls-3" d="M44.35,1.4v19.195c0,2.492-.288,4.902-.842,7.208-.082.35-.164.68-.267,1.03-3.575,12.934-15.325,22.469-29.315,22.655,6.081-5.643,9.881-13.716,9.881-22.655v-14.417c0-2.224.493-4.304,1.397-6.179C27.279,3.831,31.531.659,36.564.103c.534-.082,1.068-.103,1.623-.103,2.219,0,4.294.494,6.163,1.4Z"/>
+  </g>
 </svg>
